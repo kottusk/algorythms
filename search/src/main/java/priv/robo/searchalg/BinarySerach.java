@@ -12,16 +12,16 @@ public class BinarySerach {
 		int startPosition =0;
 		int endPosition = array.length - 1;
 		int centrePosition;
-		while(startPosition < endPosition){
-			centrePosition = (endPosition - startPosition)/2;
+		while(startPosition <= endPosition){
+			centrePosition = (endPosition + startPosition)/2;
 			int candidate = array[centrePosition];
 			if(candidate == wanted){
-				return  Optional.of(centrePosition);
+				return Optional.of(centrePosition);
 			}
-			if(candidate <= wanted){
-				startPosition = centrePosition;
+			if(candidate < wanted){
+				startPosition = centrePosition +1;
 			}else{
-				endPosition = centrePosition;
+				endPosition = centrePosition -1;
 			}
 		}
 		return Optional.empty();

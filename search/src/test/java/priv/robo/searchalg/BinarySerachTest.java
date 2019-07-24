@@ -9,10 +9,19 @@ import org.junit.jupiter.api.Test;
 
 public class BinarySerachTest {
 
+	private int[] testArray = {1,2,3,4,5,6,7,8,9,10};
+
+
 	@Test
 	public void binarySearchTest() throws Exception{
-		int[] array = {1,2,3,4,5,6,7,8,9};
-		Arrays.sort(array);
-		assertEquals(Optional.of(1),BinarySerach.binarySearch(array,2));
+		Arrays.sort(testArray);
+		assertEquals(Optional.of(1),BinarySerach.binarySearch(testArray,2));
 	}
+
+	@Test
+	public void binarySearchTestNotFound() throws Exception{
+		Arrays.sort(testArray);
+		assertEquals(Optional.empty(),BinarySerach.binarySearch(testArray,100));
+	}
+
 }
