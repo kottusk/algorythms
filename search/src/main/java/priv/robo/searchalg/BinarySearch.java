@@ -3,7 +3,7 @@ package priv.robo.searchalg;
 import java.util.Objects;
 import java.util.Optional;
 
-public class BinarySerach {
+public class BinarySearch {
 
 	public static Optional<Integer> binarySearch(int[] array, int wanted){
 		if(Objects.isNull(array) || array.length == 0){
